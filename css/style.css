@@ -1,6 +1,9 @@
 body {
     background-color: #333;
-    color: chartreuse;
-    text-align: center;
+    color:moccasin;
     font-size: 2rem;
+}
+
+#title {
+    text-align: center;
 }
