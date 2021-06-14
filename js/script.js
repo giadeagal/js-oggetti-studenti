@@ -5,14 +5,38 @@
 // Dare la possibilità all’utente, attraverso 3 prompt(), di aggiungere un nuovo oggetto studente inserendo nell’ordine: nome, cognome e età.
 docuPrint("title", "<h1>Elenco Studenti</h1>");
 
-var studentA = {
-    name: "Bilbo",
-    surname: "Baggins",
-    age: 111
-};
+// var studentA = {
+//     name: "Bilbo",
+//     surname: "Baggins",
+//     age: 111
+// };
 
-for (k in studentA) {
-    docuAdd("text", k + ": " + studentA[k] + ".<br>");
+var students = [
+    {
+        name : "Bilbo",
+        surname : "Baggins"
+    },
+    {
+        name : "Frodo",
+        surname : "Baggins"
+    },
+    {
+        name : "Gandalf",
+        surname : "The White"
+    },
+    {
+        name : "Radagast",
+        surname : "The Brown"
+    },
+    {
+        name : "Thorin",
+        surname : "Oakshield"
+    },
+];
+
+for (var i = 0; i < students.length; i++) {
+    var listItem = "<li>" + students[i].name + " " + students[i].surname+ "</li><br>";
+    docuAdd("list", listItem);
 };
 
 // FUNZIONI **********
