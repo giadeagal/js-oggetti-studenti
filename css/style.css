@@ -1,7 +1,7 @@
 body {
     background-color: #333;
     color:moccasin;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 #title {
@@ -11,15 +11,4 @@ body {
 #list {
     width: 50%;
     margin: auto;
-}
-
-.btn {
-    position: absolute;
-    bottom: 5rem;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.btn i {
-    padding-right: .5rem;
 }

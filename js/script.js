@@ -8,32 +8,32 @@ docuPrint("title", "<h1>Elenco Studenti</h1>");
 var students = [
     {
         name: "Bilbo",
-        surname: "Baggins"
+        surname: "Baggins",
+        age: 111
     },
     {
         name: "Frodo",
-        surname: "Baggins"
+        surname: "Baggins",
+        age: 60
     },
     {
         name: "Gandalf",
-        surname: "The White"
+        surname: "The White",
+        age : 99999
     },
     {
         name: "Radagast",
-        surname: "The Brown"
+        surname: "The Brown",
+        age: 99999
     },
     {
         name: "Thorin",
-        surname: "Oakshield"
+        surname: "Oakshield",
+        age: 320
     },
 ];
 
-for (var i = 0; i < students.length; i++) {
-    var listItem = "<li>" + "Nome: " + students[i].name + "<br>Cognome: " + students[i].surname+ "</li><br>";
-    docuAdd("list", listItem);
-};
-
-document.getElementById("addBtn").addEventListener("click", addStudent);
+addStudent(students);
 
 // FUNZIONI **********
 function docuPrint(x, y) {
@@ -44,19 +44,18 @@ function docuAdd(x, y) {
     document.getElementById(x).innerHTML += y;
 }
 
-function addStudent() {
-    students.push(
-        {
-            name: prompt("Inserisci il nome del nuovo studente"),
-            surname: prompt("Inserisci il cognome del nuovo studente"),
-        }
-    )
-    document.getElementById("list").className = "d-none";
-    document.getElementById("addBtn").className = "d-none";
-    document.getElementById("newList").className -= "d-none";
-
+function addStudent(x) {
+    var newStudentName = prompt("Inserisci il nome del nuovo studente");
+    var newStudentSurname = prompt("Inserisci il cognome del nuovo studente");
+    var newStudentAge = parseInt(prompt("Inserisci l'età del nuovo studente"));
+     var newStudent = {
+         name: newStudentName,
+         surname: newStudentSurname,
+         age: newStudentAge
+    };
+    x.push(newStudent);
     for (var i = 0; i < students.length; i++) {
-        var listItem = "<li>" + "Nome: " + students[i].name + "<br>Cognome: " + students[i].surname+ "</li><br>";
-        docuAdd("newList", listItem);
+        var listItem = "<li>" + "Nome: " + students[i].name + "<br>Cognome: " + students[i].surname+ "<br>" + "Età: " + students[i].age + "</li><br>";
+        docuAdd("list", listItem);
     };
 }
